@@ -53,7 +53,7 @@ func main() {
 	dbPort := getEnv("DB_PORT", "5432")
 	dbUser := getEnv("DB_USER", "admin")
 	dbPassword := getEnv("DB_PASSWORD", "admin")
-	dbName := getEnv("DB_NAME", "mydb")
+	dbName := getEnv("DB_NAME", "moovie")
 	dbSSLMode := getEnv("DB_SSLMODE", "disable")
 
 	dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=%s",
