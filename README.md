@@ -24,7 +24,7 @@ This is a RESTful API for managing a collection of movies. It's built with Go (h
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/moovie_project.git
+git clone https://github.com/0xemrekaya/moovie_project.git
 cd moovie_project
 ```
 
