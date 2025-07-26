@@ -1,6 +1,6 @@
 # Moovie API
 
-This is a RESTful API for managing a collection of movies. It's built with Go (httprouter) and uses PostgreSQL as its database.
+This is a sample RESTful API project built with Go (httprouter). It demonstrates how to build a modern backend application that includes a PostgreSQL database, with everything containerized and managed by Docker Compose. The API provides standard CRUD operations for managing a collection of movies.
 
 ## Features
 
