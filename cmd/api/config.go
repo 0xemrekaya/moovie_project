@@ -27,17 +27,16 @@ type config struct {
 
 func loadConfig() (*config, error) {
 	var cfg config
-	err := godotenv.Load()
-	if err != nil {
-		// .env file is optional, so we just log a warning
-		return nil, fmt.Errorf(".env file not found, using default values")
-	}
+	// .env file is optional. We attempt to load it but ignore any errors if it's
+	// not found. The configuration will fall back to environment variables or
+	// default values.
+	_ = godotenv.Load()
 
 	// Build DSN from environment variables
 	dbHost := getEnv("DB_HOST", "localhost")
 	dbPort := getEnv("DB_PORT", "5432")
 	dbUser := getEnv("DB_USER", "admin")
-	dbPassword := getEnv("DB_PASSWORD", "admin")
+	dbPassword := getEnv("DB_PASSWORD", "mysecretpassword")
 	dbName := getEnv("DB_NAME", "moovie")
 	dbSSLMode := getEnv("DB_SSLMODE", "disable")
 

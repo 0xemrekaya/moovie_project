@@ -9,16 +9,13 @@ services:
       - "8000:8000"
     depends_on:
       - postgres
-    environment:
-      - DB_HOST=${DB_HOST}
-      - DB_PORT=${DB_PORT}
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - DB_NAME=${DB_NAME}
-      - DB_SSLMODE=${DB_SSLMODE}
+    env_file:
+      - ./.env
 
   postgres:
     image: postgres:latest
+    env_file:
+      - ./.env
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
